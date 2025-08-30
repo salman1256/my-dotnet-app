@@ -14,7 +14,11 @@ pipeline {
                  sh 'dotnet publish -c Release -o /app'
             }
         }
-
+       stage('Prepare Docker Context') {
+             steps {
+                sh 'cp Dockerfile /app/'
+                    }
+                }
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t my-dotnet-app:latest /app'
