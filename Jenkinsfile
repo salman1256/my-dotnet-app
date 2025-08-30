@@ -10,7 +10,8 @@ pipeline {
 
         stage('Build & Publish .NET App') {
             steps {
-                sh 'dotnet publish ./app -c Release -o ./publish'
+                sh 'dotnet publish ./app/*.csproj -c Release -o ./publish'
+
             }
         }
 
