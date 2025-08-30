@@ -10,7 +10,12 @@ pipeline {
 
         stage('Build & Publish .NET App') {
             steps {
-                sh 'dotnet publish ./app/*.csproj -c Release -o ./publish'
+                sh '''
+#!/bin/bash
+proj=$(find ./app -name "*.csproj" | head -n 1)
+dotnet publish "$proj" -c Release -o ./publish
+'''
+
 
             }
         }
