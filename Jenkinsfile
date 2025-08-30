@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build & Publish .NET App') {
             steps {
-                 sh 'dotnet publish ./my-dotnet-app.csproj -c Release -o ./publish'
+                 sh 'dotnet publish -c Release -o /app'
             }
         }
 
