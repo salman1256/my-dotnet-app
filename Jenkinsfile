@@ -1,12 +1,7 @@
 pipeline {
     agent any
 
-    tools {
-        // Ensure Jenkins has .NET installed or installed in Docker agent
-        // Example: use sdk 8.0 from Jenkins Global Tool Configuration
-    }
-
-    stages {
+       stages {
         stage('Checkout Code') {
             steps {
                 git 'https://github.com/salman1256/my-dotnet-app.git'

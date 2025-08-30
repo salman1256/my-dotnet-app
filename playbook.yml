@@ -1,0 +1,9 @@
+- name: Deploy .NET Core Console App
+  hosts: localhost
+  tasks:
+    - name: Run Docker container
+      docker_container:
+        name: my-dotnet-app
+        image: my-dotnet-app:latest
+        state: started
+        command: ["dotnet", "app.dll"]
